@@ -7,12 +7,11 @@ public class MrKim_2nd {
 	      
 	      for(String name : seoul){
 	          if( name.equals("Kim")){
-					answer = "±è¼­¹æÀº "+index+"¿¡ ÀÖ´Ù";
+					answer = "ê¹€ì„œë°©ì€ "+index+"ì— ìˆë‹¤";
 	              break;
 	          }
 	          index++;
 	      } 
 	      return answer;
 	  }
-
 }

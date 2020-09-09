@@ -1,9 +1,8 @@
 package PrimeNumber;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
-public class PN {	//µ¿ºû³ª
+public class PN {	//ë™ë¹›ë‚˜
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		

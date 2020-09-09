@@ -5,7 +5,7 @@ public class MrKim_first {
 	      String answer = "";
 	      for(int i = 0; i < seoul.length; i++) {
 				if(seoul[i].equals("Kim")) {
-					answer = "±è¼­¹æÀº "+i+"¿¡ ÀÖ´Ù";
+					answer = "ê¹€ì„œë°©ì€ "+i+"ì— ìžˆë‹¤";
 				}
 			} 
 	      return answer;
