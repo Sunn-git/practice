@@ -15,7 +15,6 @@ public class Watermelon_2nd { //(26.78ms, 79.9MB)
 		
 		if(n % 2 != 0) answer += "수";
 		
-		
 		System.out.println(answer);
 	}
 }
