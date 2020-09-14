@@ -1,7 +1,5 @@
 package Kakao0912;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 
 public class Cote02 {
@@ -27,6 +25,8 @@ public class Cote02 {
 		}
 		
 		Object[] keys = orderCnt.keySet().toArray();
+		
+		Object[] values = orderCnt.values().toArray();
 		
 		for(Object o : keys) {
 			if(orderCnt.get(o) < 2) orderCnt.remove(o);
