@@ -21,14 +21,14 @@ public class Crane_1st {
 		for(int i = 0; i < board.length; i++) {
 			for(int j = 0; j < board.length; j++) {
 				if(board[j][i] > 0) {
-					length[i] = board.length-j; // length[0] = 2
+					length[i] = board.length-j; 
 					break;
 				}
 			}
 		}
 		
-		for(int i = 0; i < moves.length; i++) { // i = 0
-			int lane = moves[i]-1; // 0
+		for(int i = 0; i < moves.length; i++) { 
+			int lane = moves[i]-1; 
 			if(length[lane] > 0) {
 				basket.add(board[board.length-length[lane]][lane]);
 				length[lane]--;
