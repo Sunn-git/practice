@@ -43,6 +43,8 @@ public class FunctionDev_3rd { // 코드는 짧아졌지만 소요시간이 더 
 		System.out.println(complete);
 		
 		int[] answer = complete.stream().mapToInt(Integer::intValue).toArray();
+//		이부분이 시간 왕창 잡아먹음
+//		이렇게 변환 안하고 그냥 ArrayList로 리턴하면  0.0x 대에 다 끝남
 		
 	}
 
