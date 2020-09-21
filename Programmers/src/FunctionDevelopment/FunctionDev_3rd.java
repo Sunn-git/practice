@@ -14,7 +14,8 @@ public class FunctionDev_3rd { // 코드는 짧아졌지만 소요시간이 더 
 		
 		for(int i = 0; i < progresses.length; i++) {
 			int left = 100 - progresses[i];
-			required[i] = ((left % speeds[i]) == 0) ? left / speeds[i] : (left / speeds[i]) + 1;
+			required[i] = ((left % speeds[i]) == 0) ? 
+					left / speeds[i] : (left / speeds[i]) + 1;
 		}
 		
 		ArrayList<Integer> complete = new ArrayList<Integer>();
@@ -30,6 +31,8 @@ public class FunctionDev_3rd { // 코드는 짧아졌지만 소요시간이 더 
 			if(sum == progresses.length) break;
 			
 			for(int j = i; j < required.length; j++) {
+				System.out.printf("i= %d [i]= %d / j= %d [j]= %d\n", i, required[i] , j, required[j]);
+				
 				if(required[i] < required[j]) {
 					i = j-1;
 					break;
