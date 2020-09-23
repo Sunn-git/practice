@@ -21,44 +21,47 @@ public class Truck_3rd { //구글 검색하고 힌트만 봌(진입시간 확인
 //		int weight = 100;
 //		int[] truck_weights = {10,10,10,10,10,10,10,10,10,10}; //110
 		
-		
-		int answer = 0;
-		ArrayList<Integer> bridge = new ArrayList<Integer>(); 
+		ArrayList<Integer> bridge = new ArrayList<Integer>();
+		int[] indexes = new int[truck_weights.length];
+		int entry = 0;
+		int length = 0;
 		
 		for(int i = 0; i < truck_weights.length; i++) {
+			length = 0;
 			
-			if(bridge.size() >= bridge_length) {
-				bridge.remove(0);
+			int sum = 0;
+			for(int s : bridge) {
+				sum += s;
 			}
+			
+
+			if(i == 0) {
+				entry++;
+				continue;
+			}
+			System.out.println("========");
+			System.out.println(sum);
+			if(sum + truck_weights[i] > weight) {
+				bridge = new ArrayList<Integer>();
+				entry += bridge_length;
+			}else {
+				System.out.println(i);
+				length++;
+			}
+			
 			
 			bridge.add(truck_weights[i]);
 			
-			if(i == 0) {
-				answer++;
-			}
-			
-			if(i > 0) {
-				int sum = 0;
-				for(int s : bridge) {
-					sum += s;
-				}
-				
-				if(sum > weight) {
-					bridge.remove(0);
-					answer += bridge_length;
-				}else {
-					answer++;
-				}
-			}
+//			for(int j = 1; j <= bridge_length; j++) {
+//				indexes[i]++;
+//			}
+			System.out.println(bridge);
 		}
 		
-		answer += bridge_length;
+		
+		System.out.println(entry);
+		System.out.println(length);
 		
 
-		
-
-		
-		
-		System.out.println(answer);
 	}
 }
