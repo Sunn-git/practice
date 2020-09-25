@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class Printer_4th { // 아니 이게 된다고????? 헐...ㅋㅋㅋㅋㅋ
-	public static void main(String[] args) {
+	public static void main(String[] args) { //(1.75ms, 52.6MB)
 //		int[] priorities = {2, 1, 3, 2};
 //		int location = 2; //1
 		
