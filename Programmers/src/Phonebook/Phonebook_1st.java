@@ -1,6 +1,6 @@
 package Phonebook;
 
-public class Phonebook_1st { // 
+public class Phonebook_1st { // (1.68ms, 55.8MB)
 
 	public static void main(String[] args) {
 		String[] phone_book = {"119", "97674223", "1195524421"};
