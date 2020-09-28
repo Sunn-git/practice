@@ -1,4 +1,4 @@
-package Add;
+package Divisibility;
 
 import java.util.ArrayList;
 

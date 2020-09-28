@@ -28,21 +28,27 @@ public class Printer_4th { // 아니 이게 된다고????? 헐...ㅋㅋㅋㅋㅋ
 			
 			printer.offer(temp);
 			
-			if(map.containsKey(priorities[i])) {
+			if(map.containsKey(priorities[i])) { // 우선순위(key)와 개수(value) 담기
 				map.put(priorities[i], map.get(priorities[i])+1);
 			}else {
 				map.put(priorities[i], 1);
 			}
 		}
 		
-		Object[] keys = map.keySet().toArray();
+		Object[] keys = map.keySet().toArray(); //우선순위
 		
-		int index = keys.length;
+//		for(Object o : keys) {
+//			System.out.printf("%d, ", o);
+//		}
+//		System.out.println();
+		
+		int index = keys.length; // 큰 숫자부터 
 		int answer = 0;
 		
 		loop : do {
 			
-			int count = map.get(keys[--index]);
+			int count = map.get(keys[--index]); // 우선순위의 개수. 
+												// 반복문이 돌 때마다 index가 작아짐
 			
 			while(true) {
 				
@@ -53,27 +59,28 @@ public class Printer_4th { // 아니 이게 된다고????? 헐...ㅋㅋㅋㅋㅋ
 					answer++;
 					count--;
 					
-					if(temp[1] == 1) break loop;
+					if(temp[1] == 1) break loop; // 내가 출력하고싶은 문서
 					
-					if(count == 0) {
+					if(count == 0) { // 해당 우선순위의 문서가 모두 출력된 경우
 						break;
 					}
 	
 				}else {
-					printer.offer(printer.poll());
+					printer.offer(printer.poll()); // 더 높은 우선순위의 문서가 있는 경우
 				}	
 				
 			}
 
-//			for(Integer[] temp : printer) {
-//				System.out.printf("%d, ", temp[0]);
-//			}
-//			System.out.println();
+			System.out.println("====================");
+			for(Integer[] temp : printer) { // 반복문이 돌아갈 때마다 순서가 어떻게 바뀌는지 출력
+				System.out.printf("%d, ", temp[0]);
+			}
+			System.out.println();
 			
 			
 		}while(index > 0);
 		
-		
+		System.out.println("====================");
 		System.out.println(answer);
 	}
 }
