@@ -15,6 +15,7 @@ public class CellPhoneNumber_1st {//(5.80ms, 52.9MB)
 				answer += "*";
 			}
 			answer += phone_number.substring(length);
+			
 		}else {
 			answer = phone_number;
 		}
