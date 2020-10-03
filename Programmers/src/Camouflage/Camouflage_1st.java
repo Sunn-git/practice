@@ -33,7 +33,7 @@ public class Camouflage_1st { //(0.09ms, 52.1MB)
         }
         
         
-        System.out.println(answer-1);
+        System.out.println(answer -1);
 	}
 
 }
