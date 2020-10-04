@@ -25,6 +25,9 @@ public class Max_2nd { // 구글링 : 문자열을 내림차순 정렬하기(297
 		Arrays.sort(temp, new Comparator<String>() {
 			@Override
 			public int compare(String o1, String o2) {
+//				문자열은 사전에 나와 있는 알파벳 순서(유니코드 값 기반)로 비교
+//				문자열 길이가 다르다면 길이 값으로 비교
+				
 				return (o2+o1).compareTo(o1+o2);
 //				문자열 내림차순 청렬 >> 9 5 3 32 30 / baBA51
 				
