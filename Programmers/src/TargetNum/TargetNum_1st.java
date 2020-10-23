@@ -11,7 +11,6 @@ public class TargetNum_1st {
 		
 //		int[] sign = {1, -1};
 		
-		
 		int answer = 0;
 		
 		answer = dfs(numbers, 0, 0, target);
@@ -27,6 +26,7 @@ public class TargetNum_1st {
 			}
 			return 0;
 		}
+		
 		return dfs(numbers, depth+1, sum + numbers[depth], target) 
 				+ dfs(numbers, depth+1, sum - numbers[depth], target);
 	}
