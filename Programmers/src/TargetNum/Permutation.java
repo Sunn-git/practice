@@ -12,6 +12,7 @@ public class Permutation {
 		
 		permutationDup(input, numbers, answer, 0);
 		
+		
 //		System.out.println();
 		
 	}
