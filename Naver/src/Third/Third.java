@@ -9,7 +9,7 @@ public class Third {
 		//RGBGBRGBGBRGBGBRGBGBRGBGBRGBGB
 		
 		int numOfOrder = 3; 
-		String[] orderArr = {"3(BR2(R)", "B(RGB(RG))", "1B2R3G"};
+		String[] orderArr = {"3(BR2(R))", "B(RGB(RG))", "1B2R3G"};
 		
 		String[] result = trans(orderArr);
 		
@@ -32,9 +32,9 @@ public class Third {
 				int endI = s.indexOf(")");
 				int numI = startI-1;
 				
-				result += s.substring(0, startI-1);//앞부분
 				
 				if(s.charAt(numI) > '0' && s.charAt(numI) <= '9') {
+					result += s.substring(0, startI-1);//앞부분
 					
 					int num = Character.getNumericValue(s.charAt(numI));
 					
@@ -42,6 +42,9 @@ public class Third {
 						result += s.substring(startI+1, endI);
 					}
 					
+				}else {
+					result += s.substring(0, startI);//앞부분
+					result += s.substring(startI+1, endI);
 				}
 				
 				if(endI < (s.length()-1)) {
@@ -52,9 +55,26 @@ public class Third {
 				
 				s = result;
 				
-			}// while end
+			}// ()while end
 			
+			String result = "";
 			
+			for(int j = 0; j < s.length(); j++) {
+				
+				if(s.charAt(j) > '0' && s.charAt(j) <= '9') {
+					
+					int num = s.charAt(j) - '0';
+					
+					for(int k = 0; k < num-1; k++) {
+						result += s.charAt(j+1);
+					}
+					
+				}else {
+					result += s.charAt(j);
+				}
+			}
+			
+			answer[i] = result;	
 		}
 		
 		return answer;
