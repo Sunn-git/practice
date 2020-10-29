@@ -20,8 +20,8 @@ public class StrangerWords_3rd_others {
 		for(String ss : array) {
 			index = ss.contains(" ") ? 0 : index + 1;
 			result += (index % 2 == 0) ? 
-					ss.toLowerCase() : ss.toUpperCase();
-//					공백부터 index를 세기 시작하기 때문에 홀수일 때, 대문자로 설정
+						ss.toLowerCase() : ss.toUpperCase();
+//					공백부터 index를 세기 시작하기 때문에 홀수일 때  대문자로 설정
 		}
 		
 		return result;
@@ -36,7 +36,8 @@ public class StrangerWords_3rd_others {
 		
 		for(String string : split) {
 			index = (string.equals(" ")) ? 0 : index + 1;
-			result += (index % 2 == 0) ? string.toLowerCase() : string.toUpperCase();
+			result += (index % 2 == 0) ? 
+						string.toLowerCase() : string.toUpperCase();
 		}
 		
 		return result;

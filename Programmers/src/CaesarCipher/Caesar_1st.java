@@ -23,8 +23,8 @@ public class Caesar_1st {
 			if(s.charAt(i) != ' ') {
 				int ascii = s.charAt(i)+n;
 				
-				if(s.charAt(i) >= 'A' && s.charAt(i) <= 'Z') { //대문자인 경우 (41.16ms, 71.8MB)
-//				if(Character.isUpperCase(s.charAt(i))) { // (36.21ms, 70.2MB). 파라미터로 int와 char 모두가능
+//				if(s.charAt(i) >= 'A' && s.charAt(i) <= 'Z') { //대문자인 경우 (41.16ms, 71.8MB)
+				if(Character.isUpperCase(s.charAt(i))) { // (36.21ms, 70.2MB). 파라미터로 int와 char 모두가능
 					ascii = (ascii > 'Z') ? ascii -= 26 : ascii;
 				} else { //소문자인 경우
 					ascii = (ascii > 'z') ? ascii -= 26 : ascii;

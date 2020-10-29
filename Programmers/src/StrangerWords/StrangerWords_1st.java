@@ -3,8 +3,8 @@ package StrangerWords;
 public class StrangerWords_1st {
 
 	public static void main(String[] args) {
-//		String s = "try hello world";
-		String s = "  aaa a  b bbb ";
+		String s = "try hello world";
+//		String s = "  aaa a  b bbb ";
 
 		String answer = change(s);
 		
