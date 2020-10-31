@@ -28,7 +28,7 @@ public class PreTest_1st {
 //						,{0, 0, 1, 1}}; //2		2 2
 		
 		int one = 0;
-//		int zero = 0;
+		int zero = 0;
 		int size = 0;
 		
 		
@@ -38,7 +38,7 @@ public class PreTest_1st {
 		for(int i = 0; i < array.length; i++) {
 			for(int j = 0; j < array[0].length; j++) {
 				int cur = array[i][j];
-				if (cur != 1) {
+				if (cur == 9) {
 					continue;
 				}
 				
@@ -47,16 +47,16 @@ public class PreTest_1st {
 					size += dfs(array, i, j, 1);					
 				}
 				
-//				if(cur == 0) {
-//					zero++;
-//					dfs(array, i, j, 0);	
-//					
-//				}
+				if(cur == 0) {
+					zero++;
+					dfs(array, i, j, 0);	
+					
+				}
 			}
 		}
 		
 		
-		System.out.printf("1 : %d / size : %d", one, size);
+		System.out.printf("1 : %d / 0 : %d", one, zero);
 	}
 	
 	public static int dfs(int[][] array, int i, int j, int num) {
