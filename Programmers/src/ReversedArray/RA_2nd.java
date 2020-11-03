@@ -12,9 +12,7 @@ public class RA_2nd {
 		
 		while(n  >= 1) {
 			temp = n % 10;
-
 			queue.offer((int)temp);
-			
 			n /= 10;
 		}
 		

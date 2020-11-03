@@ -9,7 +9,8 @@ public class Collatz_1st {
 
 	}
 	
-	private static int collatz(long n, int cnt) { // int를 사용하면 범위 초과로 오답이 나온다
+	private static int collatz(long n, int cnt) { 
+		// int를 사용하면 범위 초과로 오답이 나온다
 		
 		if(n == 1) {
 			return cnt;
