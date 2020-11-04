@@ -2,7 +2,7 @@ package Budget;
 
 import java.util.Arrays;
 
-public class Budget_2nd_others { // (2.68ms, 51.9MB)
+public class Budget_2nd_others {
 
 	public static void main(String[] args) {
 		int[] d = {1,3,2,5,4};
@@ -14,19 +14,14 @@ public class Budget_2nd_others { // (2.68ms, 51.9MB)
 		int answer = 0;
 		
 		Arrays.sort(d);
-		
-		for(int i = 0; i < d.length; i++) {			
-			if(budget - d[i] >= 0) {
-				budget -= d[i];
-			}else {
-				answer = i;
-				break;
-			}
-			
-			if(i == d.length-1) {
-				answer = d.length;
-			}
-		}
+
+        for (int i = 0; i < d.length; i++) {
+            budget -= d[i];
+
+            if (budget < 0) break; // 이렇게 하는게 훨씬 간단하다
+
+            answer++;
+        }
 		
 		System.out.println(answer);
 
