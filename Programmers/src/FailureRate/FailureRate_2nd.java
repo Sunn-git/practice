@@ -37,7 +37,7 @@ public class FailureRate_2nd {
 		}
 		
 		Integer[] keyArr = new Integer[N];
-		fr.keySet().toArray(keyArr); 
+		fr.keySet().toArray(keyArr); // https://includestdio.tistory.com/1
 
 //		for(int i : keyArr) {
 //			System.out.println(i);
