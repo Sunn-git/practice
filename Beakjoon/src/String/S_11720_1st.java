@@ -6,16 +6,22 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class S_11654_1st { //아스키 코드
+public class S_11720_1st { // 숫자의 합
 	public static void main(String[] args) throws IOException {
 	
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-		String s = br.readLine();
-		int n = s.charAt(0);
-
-		bw.write(Integer.toString(n));
+		int n = Integer.parseInt(br.readLine());
+		String num = br.readLine();
+		
+		int answer = 0;
+		
+		for(int i = 0; i < num.length(); i++) {
+			answer += (num.charAt(i) - '0');
+		}
+		
+		bw.write(String.valueOf(answer));
 		bw.flush();
 		
 		br.close();
