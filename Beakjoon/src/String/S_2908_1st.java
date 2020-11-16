@@ -15,7 +15,8 @@ public class S_2908_1st { // 상수
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		StringBuffer sb = null;
 		
-		int length = st.countTokens(); //countTokens는 고정된 값이 아니다.
+		int length = st.countTokens(); //countTokens는 고정된 값이 아니다
+		
 		int[] arr = new int[length];
 		
 		
