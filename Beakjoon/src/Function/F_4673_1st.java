@@ -4,7 +4,7 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 
-public class F_4673_1st { // ¼¿ÇÁ ³Ñ¹ö
+public class F_4673_1st { // ì…€í”„ ë„˜ë²„
 
 	public static void main(String[] args) throws IOException {
 

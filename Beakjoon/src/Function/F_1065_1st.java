@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class F_1065_1st { // ÇÑ¼ö
+public class F_1065_1st { // í•œìˆ˜
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
 
@@ -30,7 +30,7 @@ public class F_1065_1st { // ÇÑ¼ö
 				
 				loop : for(int j = -4; j < 5; j++) {
 					for(int k = 1; k < s.length(); k++) {
-						if(temp != s.charAt(k)-(k*j) || s.charAt(k) > '9') break; 
+						if(temp != s.charAt(k)-(k*j)) break; 
 						
 						if(k == s.length()-1)  {
 							cnt++;
@@ -48,8 +48,8 @@ public class F_1065_1st { // ÇÑ¼ö
 }
 
 
-// 1000Àº ÇÑ¼ö°¡ ¾Æ´Ô
+// 1000ï¿½ï¿½ ï¿½Ñ¼ï¿½ï¿½ï¿½ ï¿½Æ´ï¿½
 
-// 111(1~9) 123(1~7) 135(1~5) 147(1~3) 159(1) : 4ÀÌ»óÀÇ Â÷ÀÌ´Â °¡Áú ¼ö ¾ø´Ù
+// 111(1~9) 123(1~7) 135(1~5) 147(1~3) 159(1) : 4ï¿½Ì»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-// 1 ~ 99 ´Â ¹«Á¶°Ç ÇÑ¼ö
+// 1 ~ 99 ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¼ï¿½

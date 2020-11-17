@@ -1,6 +1,6 @@
 package Function;
 
-public class F_15596_1st { //Á¤¼ö N°³ÀÇ ÇÕ
+public class F_15596_1st { //ì •ìˆ˜ Nê°œì˜ í•©
 
 	public static void main(String[] args){
 		int[] a = {3,4,5};
