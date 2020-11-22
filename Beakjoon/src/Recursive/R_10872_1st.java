@@ -8,7 +8,7 @@ import java.io.OutputStreamWriter;
 
 public class R_10872_1st {
 
-	public static void main(String[] args) throws NumberFormatException, IOException {
+	public static void main(String[] args) throws IOException {
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -23,7 +23,7 @@ public class R_10872_1st {
 	}
 	
 	private static int factorial(int n) {
-		if(n == 1) return 1;
+		if(n <= 1) return 1; // 0! == 1 이다...
 		
 		return n * factorial(n-1);
 	}
