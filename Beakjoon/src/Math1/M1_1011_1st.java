@@ -16,37 +16,43 @@ public class M1_1011_1st { // Fly me to the Alpha Centauri
 		int t = Integer.parseInt(br.readLine());
 		StringTokenizer st = null;
 		
-		int x, y;
+		long x, y;
 		
 		for(int i = 0 ; i < t; i++) {
 			st = new StringTokenizer(br.readLine());
 			
-			x = Integer.parseInt(st.nextToken());
-			y = Integer.parseInt(st.nextToken());
+			x = Long.parseLong(st.nextToken());
+			y = Long.parseLong(st.nextToken());
 			
-			int length = y - x;
+			long length = y - x;
+			
+//			x = Integer.parseInt(st.nextToken());
+//			y = Integer.parseInt(st.nextToken());
+//			
+//			int length = y - x;
 			
 			if(length < 3) {
 				bw.write(String.valueOf(length)+"\n");
+				
 			}else {
 				int repeat = 2;
 				int count = 0;
-				int active = 3;
+				int active = 2;
 				
-				for(int j = 3; j <= length; j++) {
-					if(count == repeat) active++;
+				while(length >= 3) {
+					length -= repeat;
+					active++;
+					count++;
 					
-					if(count == repeat*2) {
+					if(count == 2) {
 						repeat++;
 						count = 0;
-						active++;
 					}
-					count++;
 				}
 				
 				bw.write(String.valueOf(active)+"\n");
-			}
-		}
+			} //else end
+		} // for end
 				
 		bw.flush();
 		
