@@ -27,20 +27,32 @@ public class M1_1011_1st { // Fly me to the Alpha Centauri
 			int length = y - x;
 			
 			if(length < 3) {
-				System.out.println(length);
+				bw.write(String.valueOf(length)+"\n");
 			}else {
+				int repeat = 2;
+				int count = 0;
+				int active = 3;
 				
+				for(int j = 3; j <= length; j++) {
+					if(count == repeat) active++;
+					
+					if(count == repeat*2) {
+						repeat++;
+						count = 0;
+						active++;
+					}
+					count++;
+				}
+				
+				bw.write(String.valueOf(active)+"\n");
 			}
-			
 		}
 				
-		bw.write(String.valueOf(""));		
 		bw.flush();
 		
 		br.close();
 		bw.close();	
 	}
-	
 }
 
 
@@ -57,12 +69,14 @@ public class M1_1011_1st { // Fly me to the Alpha Centauri
 
 3 >> 1 1 1
 4 >> 1 2 1  : 2 한번 등장
+
 5 >> 1 2 1 1
 6 >> 1 2 2 1 : 2 두번 등장	6
 
 7 >> 1 2 2 1 1
 8 >> 1 2 2 2 1
 9 >> 1 2 3 2 1 : 3 한번 등장
+
 10>> 1 2 3 2 1 1
 11>> 1 2 3 2 2 1
 12>> 1 2 3 3 2 1 : 3 두번 등장	12	
