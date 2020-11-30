@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
-public class M2_1002_2nd { // 터렛 (두 점의 교점을 구하는 문제)
+public class M2_1002_2nd { // 터렛 (두 점의 교점을 구하는 문제 https://canna90.tistory.com/15)
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
