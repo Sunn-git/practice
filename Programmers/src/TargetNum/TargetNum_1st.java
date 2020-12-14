@@ -3,11 +3,11 @@ package TargetNum;
 public class TargetNum_1st {
 	
 	public static void main(String[] args) {
-		int[] numbers = {1,1,1,1,1};
-		int target = 3;
+//		int[] numbers = {1,1,1,1,1};
+//		int target = 3;
 		
-//		int[] numbers = {2, 3, 5, 7, 9};
-//		int target = 2;
+		int[] numbers = {2, 3, 5, 7, 9};
+		int target = 2;
 		
 //		int[] sign = {1, -1};
 		
