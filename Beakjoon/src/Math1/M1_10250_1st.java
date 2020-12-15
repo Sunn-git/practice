@@ -26,8 +26,8 @@ public class M1_10250_1st { // ACM 호텔
 			st.nextToken();
 			n = Integer.parseInt(st.nextToken());
 			
-			temp = (n%h == 0) ? h : n%h;
-			n = n/h + ((n%h == 0) ? 0 : 1);
+			temp = (n%h == 0) ? h : n%h; // 층 수
+			n = n/h + ((n%h == 0) ? 0 : 1); // 호 수
 			
 			sb.append(temp).append(String.format("%02d\n", n));
 
