@@ -28,7 +28,7 @@ public class S_10814_1st { // 나이순 정렬 진행중
 		Arrays.sort(users, new Comparator<String[]>() {
 			@Override
 			public int compare(String[] arg0, String[] arg1) {
-				if(arg0[0] == arg1[0]) {
+				if(arg0[0].equals(arg1[0])) { // 틀린 이유가 equals가 아니었다.
 					String a1 = arg0[1].substring(arg0[1].indexOf(" "));
 					String a2 = arg1[1].substring(arg1[1].indexOf(" "));
 					return a1.compareTo(a2);
