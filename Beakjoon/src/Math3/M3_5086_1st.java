@@ -33,5 +33,7 @@ public class M3_5086_1st { // 배수와 약수
 		
 		bw.write(sb.toString());
 		bw.flush();
+		bw.close();
+		br.close();
 	}
 }
