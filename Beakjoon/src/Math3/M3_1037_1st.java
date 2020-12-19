@@ -5,32 +5,25 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class M3_5086_1st { // 배수와 약수
+public class M3_1037_1st { // 약수
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+		int cnt = Integer.parseInt(br.readLine());
+		int[] divisors = new int[cnt];
 		StringTokenizer st = new StringTokenizer(br.readLine());
-		StringBuffer sb = new StringBuffer();
-		
-		while(st.hasMoreTokens()) {
-			int a = Integer.parseInt(st.nextToken());
-			int b = Integer.parseInt(st.nextToken());
-			
-			if(a == 0 && b == 0) break;
-			String result = "neither";
-			
-			if(a <= b) {
-				if(b % a == 0) result = "factor";
-			}else {
-				if(a % b == 0) result = "multiple";
-			}
-			sb.append(result).append("\n");
-			st = new StringTokenizer(br.readLine());
+	
+		for(int i = 0; i < cnt; i++) {
+			divisors[i] = Integer.parseInt(st.nextToken());
 		}
 		
-		bw.write(sb.toString());
+		Arrays.sort(divisors);
+		
+		bw.write(Integer.toString(divisors[0]*divisors[cnt-1]));
 		bw.flush();
 		bw.close();
 		br.close();
