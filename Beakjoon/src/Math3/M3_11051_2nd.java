@@ -70,6 +70,9 @@ public class M3_11051_2nd { // 이항계수 2. 왜 런타임에러가 나지?
 			}
 		}
 		
+		double a = 5;
+		System.out.println(result / 10007);
+
 		result %= 10007;
 		
 		bw.write(String.valueOf(Math.round(result)));
