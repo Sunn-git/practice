@@ -31,19 +31,35 @@ public class M3_2981_2nd { // 검문  16%에서 시간초과.
 //			System.out.println("maxM : " + maxM);
 		}
 		
-		int[] m = new int[maxM+1];
+//		int[] m = new int[maxM+1];
 		
 		TreeSet<Integer> tree = new TreeSet<Integer>();
 		
-		for(int i = 2; i <= maxM; i++) {
-			for(int j = i; j <= maxM; j += i) {
-				if(m[j] == -1) continue;
+//		for(int i = 2; i <= maxM; i++) {
+//			for(int j = i; j <= maxM; j += i) {
+//				if(m[j] == -1) continue;
+//				if(maxM % j == 0) {
+//					tree.add(j);
+//					m[j] = -1;
+//				}
+//			}
+//		}
+		
+		/*
+		 25%에서 틀림
+		 
+		tree.add(maxM);
+		
+		for(int i = 2; i <= Math.sqrt(maxM); i++) {
+			for(int j = i; j <= Math.sqrt(maxM); j += i) {
 				if(maxM % j == 0) {
 					tree.add(j);
-					m[j] = -1;
+					tree.add(maxM / j);
 				}
 			}
 		}
+		
+		*/
 		
 		for(int i : tree) {
 			sb.append(i).append(" ");
