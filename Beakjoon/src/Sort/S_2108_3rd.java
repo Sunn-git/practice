@@ -46,7 +46,7 @@ public class S_2108_3rd { // 통계학 완료 !!!!!!!!!
 			if(i > max) max = i;
 		}
 		
-		//최빈값 구하기
+		//최빈값 구하기: 숫자를 인덱스로 지정하지 않고(음수때문) 인덱스를 지표로 사용
 		ArrayList<Integer> freq = new ArrayList<Integer>();
 		for(int i = 0; i < n; i++) { 
 			if(cnt[i] == max) freq.add(input[i]);
