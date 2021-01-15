@@ -12,6 +12,8 @@ public class Intro13_reverseInParentheses_1st {
 			startI = inputString.lastIndexOf('(');
 			endI = inputString.indexOf(')');
 			
+			if(startI > endI) startI = inputString.indexOf('(');
+			
 //			System.out.printf("%d %d\n", startI, endI);
 			temp.setLength(0);
 			temp.append(inputString.substring(startI+1, endI));
