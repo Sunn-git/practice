@@ -38,3 +38,21 @@ public class Intro07_almostincreasingSequence_3rd {
 		return true;
 	}
 }
+
+/*
+sequence: [1, 3, 2, 1] F
+sequence: [1, 3, 2] T
+sequence: [1, 2, 1, 2] F
+sequence: [3, 6, 5, 8, 10, 20, 15] F
+sequence: [1, 1, 2, 3, 4, 4] F
+sequence: [1, 4, 10, 4, 2] F
+sequence: [10, 1, 2, 3, 4, 5] T
+sequence: [1, 1, 1, 2, 3] F
+sequence: [0, -2, 5, 6] T
+sequence: [1, 2, 3, 4, 5, 3, 5, 6] F
+
+
+  
+  
+  
+ */
