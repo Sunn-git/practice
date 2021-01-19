@@ -1,6 +1,6 @@
 package Arcade;
 
-public class Intro15_AddBorder_3rd_others { 
+public class Intro15_AddBorder_3rd_others {  //bartek_p1's solution
 	public static void main(String[] args) {
 		String[] picture = {"abc", 
 				 			"ded"};
