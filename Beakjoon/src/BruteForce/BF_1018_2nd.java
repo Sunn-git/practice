@@ -43,7 +43,7 @@ public class BF_1018_2nd { // 체스판 다시 칠하기.
 				for(int k = 0; k < 8; k++) {
 					for(int l = 0; l < 8; l++) {
 						if(chess[point] == arr[k+i][l+j]) temp++; // 체스판과 일치하면 증가
-						if(l < 7) point = (point == 0) ? 1 : 0; // 포인터 바꿔주기
+						if(l < 7) point = (point == 0) ? 1 : 0; // 포인터 바꿔주기(체스판은 흑백이 번갈아 나오기 때문)
 					}
 				}
 				if(temp >= result) result = temp; // 체스판과 더 많이 일치하는 경우 최대값 바꿔주기
@@ -51,5 +51,6 @@ public class BF_1018_2nd { // 체스판 다시 칠하기.
 		}
 		
 		return 64-result; // 바꿔야하는 개수로 반환
+		// 흑백 반전을 result && 64-result 로 해도 된다..... 대박
 	}
 }
