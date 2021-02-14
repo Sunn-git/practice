@@ -24,11 +24,10 @@ public class BT_1759_1st { // 암호 만들기
 		char[] cArr = br.readLine().replace(" ", "").toCharArray();
 		Arrays.sort(cArr);
 		
-		for(char ch : cArr) {
-			System.out.printf("%s ", ch);
-		}
-		System.out.println();
-		
+//		for(char ch : cArr) {
+//			System.out.printf("%s ", ch);
+//		}
+//		System.out.println();
 		
 		dfs(cArr, l, 0, "");
 		
