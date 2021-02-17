@@ -31,7 +31,7 @@ public class BT_2661_1st { // 좋은 수열 9퍼에서 틀림..
 		return;
 	}
 	
-	static boolean hasPalindrome(int result) {
+	static boolean hasPalindrome(int result) { //Palindrome아님.....
 		String s = String.valueOf(result);
 		
 		for(int i = 2; i <= s.length()/2; i++) { // 묶을 길이 
