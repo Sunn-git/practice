@@ -16,7 +16,7 @@ public class BT_1182_1st { // 부분수열의 합
 		int n = Integer.parseInt(st.nextToken());
 		int s = Integer.parseInt(st.nextToken());
 		
-		if(s == 0) cnt--; // 합이 0 일 경우 아무것도 포함하지 않는 공집합 제외
+		if(s == 0) cnt--; // 합이 0 일 경우, 아무것도 포함하지 않는 공집합 제외
 		
 		int[] arr = new int[n];
 		st = new StringTokenizer(br.readLine());
@@ -41,8 +41,8 @@ public class BT_1182_1st { // 부분수열의 합
 			return;
 		}
 		
-		dfs(arr, s, sum, depth+1);
-		dfs(arr, s, sum + arr[depth], depth+1);	
+		dfs(arr, s, sum, depth+1); // 현재 인덱스의 수를 포함하지 않는 dfs
+		dfs(arr, s, sum + arr[depth], depth+1);	//현재 인덱스의 수를 포함하는 dfs
 		//부분수열의 경우들을 이렇게 만들어야 한다는걸 생각 못했음.
 	}
 }
