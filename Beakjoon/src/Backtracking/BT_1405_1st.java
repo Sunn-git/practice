@@ -27,7 +27,7 @@ public class BT_1405_1st { // 미친로봇
 		
 		dfs(n, odds, check, n, n, 0, 1);
 		
-		bw.write(String.valueOf(percentage*Math.pow(0.01, n)));
+		bw.write(String.valueOf(percentage*Math.pow(0.001, n)));
 		bw.flush();
 		br.close();
 		bw.close();
@@ -35,7 +35,8 @@ public class BT_1405_1st { // 미친로봇
 	static double percentage = 0;
 	
 	static void dfs(int n, int[] odds, boolean[][] check, int x, int y, int depth, double percent) {
-		if(depth == n && !check[x][y]) {
+		if(depth == n+1) {
+//			 && !check[x][y]
 //				for(boolean[] arr : check) {
 //					for(boolean b : arr) {
 //						System.out.print(b? "O":"X");
@@ -49,6 +50,8 @@ public class BT_1405_1st { // 미친로봇
 			return;
 		}
 		
+		// 0 1234 5
+		//   EENW S
 		
 		if(!check[x][y]) {
 			check[x][y] = true;	
@@ -66,7 +69,7 @@ public class BT_1405_1st { // 미친로봇
 			return; // 여기 return이 있는게 시간이 아주 조금 덜걸린다.
 		}
 		
-		return;
+//		return;
 	}
 	
 
@@ -83,6 +86,7 @@ public class BT_1405_1st { // 미친로봇
 = 놓친 부분 =
 1. 확률이 0인 경우 처리 안함
 2. dfs 종료조건에 depth == n만 설정 (내 코드에서 이렇게 설정하면 모든 경우의 수가 다 나옴)
+ 	내 코드에서는 depth가 1일때 처음 이동한 상태된다 depth == n+1로 수정하면 됨
 3. return해서 나왔을때 check를 false로 되돌려주는 처리 안함
 
  */
