@@ -8,7 +8,7 @@ import java.io.OutputStreamWriter;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class G_1026_2nd { // 보물
+public class G_1026_2nd { // 보물 틀림.
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -46,5 +46,6 @@ public class G_1026_2nd { // 보물
 /*
  
 B를 정렬하지 않고 풀어보기
+
 
  */
