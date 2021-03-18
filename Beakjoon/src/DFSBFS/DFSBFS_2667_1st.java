@@ -31,7 +31,8 @@ public class DFSBFS_2667_1st { // 단지번호붙이기
 			}
 		}
 		
-		ArrayList<Integer> list = new ArrayList<Integer>();
+//		ArrayList<Integer> list = new ArrayList<Integer>(); 
+//		단지 크기를 넣어주기 위한 AL or PQ 하나만 사용하면 된다. AL을 사용하면 Collections.sort를 해줘야함
 		PriorityQueue<Integer> q = new PriorityQueue<Integer>();
 		
 		for(int i = 0; i < n; i++) {
@@ -46,7 +47,7 @@ public class DFSBFS_2667_1st { // 단지번호붙이기
 			}
 		}
 		
-		Collections.sort(list);
+//		Collections.sort(list);
 		
 		sb.append(cnt).append("\n");
 //		for(int i: list) {
@@ -78,10 +79,6 @@ public class DFSBFS_2667_1st { // 단지번호붙이기
 		if(y > 0) dfs(x, y-1);
 		//우
 		if(y < n-1) dfs(x, y+1);
-	}
-	
-	static void fx() {
-		
 	}
 }
 
