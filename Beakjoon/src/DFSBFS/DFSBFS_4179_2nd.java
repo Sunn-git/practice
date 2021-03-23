@@ -9,7 +9,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class DFSBFS_4179_1st { // 불! 진행중 28퍼에서 틀림
+public class DFSBFS_4179_2nd { // 불! 완료.
 	public static Queue<int[]> q;
 	public static char[][] arr;
 	public static int[][] visitedF, visitedJ;
@@ -93,9 +93,9 @@ public class DFSBFS_4179_1st { // 불! 진행중 28퍼에서 틀림
 		
 		bfs(J);
 		
+		String result = (length != -1)? Integer.toString(length) : "IMPOSSIBLE";
 		
-		
-		bw.write(Integer.toString(length));
+		bw.write(result);
 		bw.flush();
 		br.close();
 		bw.close();
@@ -149,72 +149,7 @@ public class DFSBFS_4179_1st { // 불! 진행중 28퍼에서 틀림
 
 /*
 
-지금까지처럼 목적지가 정해져있거나, 더이상 갈 곳이 없을 때까지 반복하는 경우와 달라 문제를 어떻게 풀어야 할지 막막했다.
-이 경우에는 경계를 벗어나면 탈출이기 때문에 경계를 벗어나는 조건을 종료조건으로 주면 됐다.
-
-https://www.youtube.com/watch?v=ftOmGdm95XI
-방문처리를 두개의 배열에서 따로 해줘야하고
-while문 내용도 달라진다.
-
-5 5
-....F
-...J#
-....#
-....#
-...#.
-
-답 4
-
-5 5
-#####
-#...#
-#.J.#
-#...#
-#####
-답 -1
-
-
-7 6
-######
-#.J..#
-#.##.#
-#....#
-..####
-#.#...
-#...#F
-답 6
-
-
-=============
-
-21퍼에서 통과 못한 테케
-
-4 4
-###F
-#J.#
-#..#
-#..#
-답 : 3  오답 -1 >> 불이 움직이지 못하는 경우를 고려안함
-고쳤지만 여전히 21퍼에서 틀림
-
-==========================
-10 10
-#........#
-#........#
-#........#
-#........#
-#...J....#
-#........#
-#........#
-#........#
-#........#
-FFFFFFFFFF
-
-테케를 돌려보니 불이 전혀 번지지 않고있었다..
-고쳤지만 25퍼에 틀림 ^^
-
-================================
-
-visitedF[nx][ny] >= 0 에 등호 추가해주니 28퍼에서 틀림
+그동안 IMPOSSIBLE 대신에 -1을 출력해서 계속 틀리던 거였다.............
+정말 이렇게 허무할 수가 없다.
 
  */
