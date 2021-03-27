@@ -9,18 +9,16 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class DFSBFS_2206_2nd { // 벽 부수고 이동하기
-//	public static boolean[][] arr;
+public class DFSBFS_2206_2nd { // 벽 부수고 이동하기 메모리초과
 	public static int[][] arr;
 	public static int[][][] visited;
 	public static int[] dx = {1, 0, -1, 0};
 	public static int[] dy = {0, 1, 0, -1};
-	public static int n, m;
+	public static int n, m, result;
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		StringTokenizer st = new StringTokenizer(br.readLine());
-		StringBuffer sb = new StringBuffer();
 		
 		n = Integer.parseInt(st.nextToken());
 		m = Integer.parseInt(st.nextToken());
@@ -43,15 +41,6 @@ public class DFSBFS_2206_2nd { // 벽 부수고 이동하기
 		
 		bfs();
 		
-//		for(int[] ar : arr) {
-//			for(int i : ar) {
-//				System.out.printf("%d ", i);
-//			}
-//			System.out.println();
-//		}
-//		
-//		System.out.println("================");
-//		
 		for(int[][] ar : visited) {
 			for(int[]a : ar) {
 				for(int i : a) {
@@ -62,7 +51,7 @@ public class DFSBFS_2206_2nd { // 벽 부수고 이동하기
 			System.out.println("================");
 		}
 		
-		bw.write(Integer.toString(arr[n-1][m-1]));
+		bw.write(Integer.toString(result));
 		bw.flush();
 		br.close();
 		bw.close();
@@ -76,8 +65,11 @@ public class DFSBFS_2206_2nd { // 벽 부수고 이동하기
 		int[] a;
 		while(!queue.isEmpty()) {
 			a = queue.poll();
-//			System.out.printf("0: %d, 1:%d, 2:%d \n", a[0], a[1], a[2]);
-			
+			if(a[1] == n-1 && a[2] == m-1) {
+				result = visited[a[0]][a[1]][a[2]];
+				return;
+			}
+
 			int nx,ny;
 			for(int i = 0; i < 4; i++) {
 				nx = a[1]+dx[i];
@@ -93,22 +85,40 @@ public class DFSBFS_2206_2nd { // 벽 부수고 이동하기
 					
 				}else if(arr[nx][ny] == 1) {
 					if(a[0] == 1) continue;
+					if(!canIBreakIt(nx, ny)) continue;
+					
 					queue.offer(new int[] {a[0]+1, nx, ny});
 					visited[a[0]+1][nx][ny] = visited[a[0]][a[1]][a[2]]+1;
 				}
-				
-//				System.out.printf("nx : %d, ny : %d\n", nx, ny);
-				
-				
-				if(nx == n-1 && ny == m-1) return;
-				
 			}
 		}
+		
+		result = -1;
+		
+	}
+	
+	static boolean canIBreakIt(int x, int y) {
+		int cnt = 0;
+		
+		int nx, ny;
+		for(int i = 0; i < 4; i++) {
+			nx = x+dx[i];
+			ny = y+dy[i];
+			
+			if(nx < 0 || ny < 0 || nx >= n || ny >= m) continue;
+			if(arr[nx][ny] == 1) continue;
+			cnt++;	
+		}
+		
+		return cnt >= 2;
 	}
 }
 
 
 /*
+ 
+ nx, ny가 벽인경우와 아닌 경우를 모두  queue에 담아줘야 한다.
+ 
  
 6 4
 0000
