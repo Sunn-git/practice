@@ -65,6 +65,7 @@ public class DFSBFS_2206_2nd { // 벽 부수고 이동하기 메모리초과
 		int[] a;
 		while(!queue.isEmpty()) {
 			a = queue.poll();
+//			System.out.printf("%d, %d, %d\n", a[0],a[1],a[2]);
 			if(a[1] == n-1 && a[2] == m-1) {
 				result = visited[a[0]][a[1]][a[2]];
 				return;
@@ -76,14 +77,20 @@ public class DFSBFS_2206_2nd { // 벽 부수고 이동하기 메모리초과
 				ny = a[2]+dy[i];
 				
 				if(nx < 0 || ny < 0 || nx >= n || ny >= m) continue;
-				if(visited[a[0]][nx][ny] > 0 && 
-						visited[a[0]][nx][ny] < visited[a[0]][a[1]][a[2]]+1)
-					continue;
-				if(arr[nx][ny] == 0) {
+				
+				if(visited[a[0]][nx][ny] > 0) continue;
+				/* 메모리 초과가 났던 이유가 바로 이부분 때문이었다.
+					방문했던 배열이어도 새로 넣으려는 값이 더 작으면 통과되게 쓴건데
+					이부분이 문제라 계속 메모리 초과가 났던거였다...
+					bfs로 탐색하기 때문에 이 조건은 설정해줄 필요가 없었다
+					(bfs로 n,m에 한번 도착하면 그게 무조건 최단거리)
+				*/
+				
+				if(arr[nx][ny] == 0) { // 이동가능
 					queue.offer(new int[] {a[0], nx, ny});
 					visited[a[0]][nx][ny] = visited[a[0]][a[1]][a[2]]+1;
 					
-				}else if(arr[nx][ny] == 1) {
+				}else if(arr[nx][ny] == 1) { // 벽
 					if(a[0] == 1) continue;
 					if(!canIBreakIt(nx, ny)) continue;
 					
@@ -136,6 +143,57 @@ public class DFSBFS_2206_2nd { // 벽 부수고 이동하기 메모리초과
 0111
 0000
 
+
+8 8
+01000100
+01010100
+01010100
+01010100
+01010100
+01010100
+01010100
+00010100
+29
+
+5 10
+0000011000
+1101011010
+0000000010
+1111111110
+1111000000
+답 14
+
+
+8 4
+0000
+0110
+1110
+0000
+0111
+0000
+1110
+0000
+11
+
+6 4
+0000
+1110
+0110
+0000
+0111
+0000
+9
+
+8 8
+01000100
+01010100
+01010100
+01010100
+01010100
+01010100
+01010100
+00010100
+29
 
 
  */
