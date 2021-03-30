@@ -9,7 +9,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class DFSBFS_2206_2nd { // 벽 부수고 이동하기 메모리초과
+public class DFSBFS_2206_2nd { // 벽 부수고 이동하기.
 	public static int[][] arr;
 	public static int[][][] visited;
 	public static int[] dx = {1, 0, -1, 0};
