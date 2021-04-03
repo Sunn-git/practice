@@ -1,21 +1,22 @@
-package FindDecimal;
+package FindPrimeNumber;
 
-public class FindDecimal_2nd {
-	public static int[] decimals;
+public class FindPrimeNumber_2nd {
+	public static int[] primes;
 	public static int answer = 0, idx;
 	public static void main(String[] args) {
 		String numbers = "17"; // 3
 //		String numbers = "011"; // 2
 		
-		decimals = new int[(int)Math.pow(10, numbers.length())+1];
+		primes = new int[(int)Math.pow(10, numbers.length())+1];
 		
-		for(int i = 2; i < decimals.length; i++) {
-			decimals[i] = i;
+		for(int i = 2; i < primes.length; i++) {
+			primes[i] = i;
 		}
 		
-		for(int i = 2; i <= Math.sqrt(decimals.length); i++) {
-			for(int j = i+i; j < decimals.length; j += i) {
-				decimals[j] = 0;
+		for(int i = 2; i <= Math.sqrt(primes.length); i++) {
+			for(int j = i+i; j < primes.length; j += i) {
+				if(primes[j] == 0) continue;
+				primes[j] = 0;
 			}
 		}
 		
@@ -34,9 +35,9 @@ public class FindDecimal_2nd {
 			idx = Integer.parseInt(String.valueOf(result));
 			if(idx == 1) return;
 			
-			if(decimals[idx] > 0) {
+			if(primes[idx] > 0) {
 				answer++;
-				decimals[idx] = -1;
+				primes[idx] = -1;
 			}
 			return;
 		}

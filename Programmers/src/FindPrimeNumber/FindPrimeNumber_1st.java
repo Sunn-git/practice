@@ -1,27 +1,28 @@
-package FindDecimal;
+package FindPrimeNumber;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class FindDecimal_1st {
+public class FindPrimeNumber_1st {
 	public static void main(String[] args) {
 //		String numbers = "17"; // 3
 		String numbers = "011"; // 2
 		int answer = 0;
 		
-		int[] decimals = new int[(int)Math.pow(10, numbers.length())+1];
+		int[] primes = new int[(int)Math.pow(10, numbers.length())+1];
 		
-		for(int i = 2; i < decimals.length; i++) {
-			decimals[i] = i;
+		for(int i = 2; i < primes.length; i++) {
+			primes[i] = i;
 		}
 		
-		for(int i = 2; i <= Math.sqrt(decimals.length); i++) {
-			for(int j = i+i; j < decimals.length; j += i) {
-				decimals[j] = 0;
+		for(int i = 2; i <= Math.sqrt(primes.length); i++) {
+			for(int j = i+i; j < primes.length; j += i) {
+				if(primes[j] == 0) continue;
+				primes[j] = 0;
 			}
 		}
 		
-//		for(int i : decimals) {
+//		for(int i : primes) {
 //			if(i != 0) {
 //				System.out.println(i);	
 //				answer++;
@@ -36,7 +37,7 @@ public class FindDecimal_1st {
 		}
 		
 		for(int i : set) {
-			if(decimals[i] != 0) answer++;
+			if(primes[i] != 0) answer++;
 		}
 		
 		
