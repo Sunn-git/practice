@@ -44,13 +44,13 @@ public class R_14956_2nd { // Philosopher’s Walk 진행중
 		}
 		
 		int p2 = 1 << k;
-		int square = m / (1<< (2*k-2));
+		int square = m / (1<<(2*k-2));
 		int[] location = recursive(m - square*(1<<(2*k-2)), k-1);
 		
 		if(square == 0) return new int[] {location[1], location[0]};
-		if(square == 1) return new int[] {location[0], location[0]+(p2/2)};
-		if(square == 2) return new int[] {location[0]+(p2/2), location[1]+(p2/2)};
-		return new int[] {p2+1-location[1], (p2/2)+1-location[0]};
+		if(square == 1) return new int[] {location[0], location[0]+p2/2};
+		if(square == 2) return new int[] {location[0]+p2/2, location[1]+p2/2};
+		return new int[] {p2+1-location[1], p2+1-location[0]};
 
 	}
 }
